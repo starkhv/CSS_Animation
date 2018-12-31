@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<style>
+			body {
+				padding: 50px;
+				color: rgba(0, 0, 0, 0.7);
+			}
+			.trigger{
+				width: 200px;
+				height: 200px;
+				border: 20px solid #999;
+				background: #ddd;
+			}
+			.box {
+				display: inline-block;
+				background: pink;
+				width: 200px;
+				height: 200px;
+				transition: transform 300ms ease-in-out;
+				pointer-events: none;
+			}
+			.trigger.clicked .box{
+				transform: translate(200px, 150px) rotate(20deg);
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.trigger').on('click', function(){
+					$(this).toggleClass('clicked');
+				});
+			});
+		</script>
+	</head>
+	<body> 
+		<div class="trigger">
+			<div class="box">
+			</div>
+		</div>
+	</body>
+</html>
